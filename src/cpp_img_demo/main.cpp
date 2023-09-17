@@ -12,15 +12,17 @@ using namespace cv;
 int main(int argc, char **argv)
 {
     std::string projectBasePath = "/Users/wave/PycharmProjects/ImgDetectDemo"; // Set your ultralytics base path
-    std::string modelPath = projectBasePath + "/model/yolov8m.onnx";
+    std::string modelPath = projectBasePath + "/models/yolov8m.onnx";
+    std::string imgInputPath = projectBasePath + "/data/img/";
+    std::string imgOutputPath = projectBasePath + "/data/img/detect/";
     bool runOnGPU = false;
+    int imgNum = 5;
 
     Inference inf(modelPath, cv::Size(640, 480), "classes.txt", runOnGPU);
-    for (int i = 0; i < 5; ++i)
+    for (int i = 0; i < imgNum; ++i)
     {
-        std::string imgFile = projectBasePath + "/img/" + std::to_string(i) + ".jpg";
-        std::cout << "start inferences img: " << imgFile << std::endl;
-        cv::Mat frame = cv::imread(imgFile);
+        std::cout << "start inferences img: " << std::to_string(i) + ".jpg" << std::endl;
+        cv::Mat frame = cv::imread(imgInputPath + std::to_string(i) + ".jpg");
 
         // Inference starts here...
         std::vector<Detection> output = inf.runInference(frame);
@@ -53,7 +55,7 @@ int main(int argc, char **argv)
         cv::resize(frame, frame, cv::Size(frame.cols*scale, frame.rows*scale));
         cv::imshow("Inference", frame);
 
-        std::string saveFile = projectBasePath + "/img/res/out_" + std::to_string(i) + ".jpg";
+        std::string saveFile = imgOutputPath + std::to_string(i) + "_detect.jpg";
         cv::imwrite(saveFile, frame);
         cv::waitKey(-1);
     }

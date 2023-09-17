@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(Yolov8CPPInference VERSION 0.1)
+project(cppImgDemo VERSION 0.1)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(OpenCV_DIR /Users/wave/Projects/opencv/install/lib/cmake/opencv4)
@@ -23,5 +23,5 @@ set(PROJECT_SOURCES
     inference.cpp
 )
 
-add_executable(Yolov8CPPInference ${PROJECT_SOURCES})
-target_link_libraries(Yolov8CPPInference ${OpenCV_LIBS})
+add_executable(cppImgDemo ${PROJECT_SOURCES})
+target_link_libraries(cppImgDemo ${OpenCV_LIBS})

@@ -15,12 +15,12 @@ opencv安装教程2(从opencv源码安装): [参考教程2](https://thecodingint
 
 ```bash
 # 进入项目目录
-cd xx/ImgDetectDemo
+cd src/cpp_img_demo
 
 # 开始编译，最终的图片结果保存在img/res目录。
 mkdir build
 cd build
-cmake ../src
+cmake ..
 make
-./Yolov8CPPInference
+./cppImgDemo
 ```
