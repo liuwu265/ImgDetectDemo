@@ -1,17 +1,6 @@
 
-这里展示python调用模型的两种方式：图片目标检测，视频目标检测
-
-python版本：python 3
-
-## 图片目标检测
-
-```
-python image_object_detection.py
-```
-
-## 视频目标检测
-
-```
-python video_object_detection.py
-```
+这里主要是cpp, python调用yolov8模型的demo.
+主要有几种调用方式：
+1. python调用样例，这里有调用图片和视频的样例，参考：[python调用demo](src/py_demo/README.md);
+2. cpp调用demo, 这里只有照片的样例，参考：[cpp调用demo](src/cpp_img_demo/README.md);
 

@@ -1,4 +1,10 @@
 build
-img/res
+data/img/detect
+data/img/py_detect
+data/video
+src/cpp_img_demo/build
+src/cpp_video_demo/build
 .git
 .idea
+.DS_Store
+src/py_demo/yolov8/__pycache__
