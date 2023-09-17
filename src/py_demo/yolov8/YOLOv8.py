@@ -121,15 +121,14 @@ class YOLOv8:
 
 
 if __name__ == '__main__':
-    from imread_from_url import imread_from_url
-
-    model_path = "../models/yolov8m.onnx"
+    home = '/Users/wave/PycharmProjects/ImgDetectDemo'
+    model_path = home + "/models/yolov8m.onnx"
+    input_img = home + "/data/img/0.jpg"
+    print("detect img: ", input_img)
+    img = cv2.imread(input_img)
 
     # Initialize YOLOv8 object detector
     yolov8_detector = YOLOv8(model_path, conf_thres=0.3, iou_thres=0.5)
-
-    img_url = "https://live.staticflickr.com/13/19041780_d6fd803de0_3k.jpg"
-    img = imread_from_url(img_url)
 
     # Detect Objects
     yolov8_detector(img)
